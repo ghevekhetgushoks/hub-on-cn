@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>简明指南 · 世界杯</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+            background-color: #f5f7fa;
+            color: #1e293b;
+            line-height: 1.7;
+            min-height: 100vh;
+        }
+
+        .hero {
+            background: linear-gradient(145deg, #0b1a2e 0%, #1f3a5f 60%, #2b4c73 100%);
+            padding: 4rem 1.5rem 4.5rem;
+            text-align: center;
+            color: #f0f4fc;
+            border-bottom: 4px solid #f9d56e;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 30px;
+            background: radial-gradient(ellipse at 30% 100%, rgba(249, 213, 110, 0.18) 0%, transparent 70%);
+        }
+
+        .hero h1 {
+            font-size: 2.6rem;
+            font-weight: 600;
+            letter-spacing: 0.02em;
+            margin-bottom: 1.2rem;
+            text-shadow: 0 2px 8px rgba(0,0,0,0.2);
+        }
+
+        .hero .sub {
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto;
+            color: #d3e2fb;
+            font-weight: 300;
+            border-top: 1px solid rgba(255,255,255,0.15);
+            padding-top: 1.2rem;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 2.5rem 1.5rem 3.5rem;
+        }
+
+        .section-card {
+            background: #ffffff;
+            border-radius: 20px;
+            padding: 2rem 2.2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04), 0 1px 3px rgba(0,0,0,0.03);
+            transition: box-shadow 0.2s;
+        }
+
+        .section-card:hover {
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+        }
+
+        .section-card h2 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #0b1a2e;
+            border-left: 5px solid #f9d56e;
+            padding-left: 1rem;
+            margin-bottom: 1.2rem;
+        }
+
+        .section-card p {
+            margin-bottom: 1rem;
+            color: #2c3e50;
+        }
+
+        .section-card p:last-child {
+            margin-bottom: 0;
+        }
+
+        .highlight-box {
+            background: #f0f5fb;
+            border-radius: 14px;
+            padding: 1.4rem 1.6rem;
+            margin: 1.2rem 0 0.8rem;
+            border-left: 4px solid #f9d56e;
+        }
+
+        .highlight-box strong {
+            color: #1f3a5f;
+        }
+
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.8rem;
+            margin: 1.5rem 0 0.5rem;
+        }
+
+        .feature-item {
+            background: #fafcff;
+            border-radius: 16px;
+            padding: 1.3rem 1.4rem;
+            border: 1px solid #e6edf5;
+        }
+
+        .feature-item h3 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #1f3a5f;
+            margin-bottom: 0.5rem;
+        }
+
+        .feature-item p {
+            font-size: 0.95rem;
+            color: #3d4f63;
+            margin-bottom: 0;
+        }
+
+        .faq-item {
+            margin: 1.2rem 0;
+            border-bottom: 1px solid #eef3f8;
+            padding-bottom: 1.2rem;
+        }
+
+        .faq-item:last-child {
+            border-bottom: none;
+            padding-bottom: 0;
+        }
+
+        .faq-question {
+            font-weight: 600;
+            color: #1f3a5f;
+            margin-bottom: 0.3rem;
+        }
+
+        .faq-answer {
+            color: #3d4f63;
+            font-size: 0.95rem;
+        }
+
+        .link-em {
+            color: #28649e;
+            text-decoration: none;
+            font-weight: 500;
+            border-bottom: 1px solid transparent;
+            transition: border-color 0.15s, color 0.15s;
+        }
+
+        .link-em:hover {
+            color: #0b3a62;
+            border-bottom: 1px solid #f9d56e;
+        }
+
+        .btn-soft {
+            display: inline-block;
+            margin-top: 0.5rem;
+            background: transparent;
+            border: 1px solid #b6cbe0;
+            color: #1f3a5f;
+            padding: 0.45rem 1.6rem;
+            border-radius: 40px;
+            font-weight: 500;
+            font-size: 0.9rem;
+            transition: all 0.2s;
+            text-decoration: none;
+        }
+
+        .btn-soft:hover {
+            background: #eaf1fa;
+            border-color: #28649e;
+        }
+
+        .note-remark {
+            background: #fefcf3;
+            border-radius: 16px;
+            padding: 1.4rem 1.8rem;
+            margin-top: 2rem;
+            border: 1px solid #e9dccd;
+            font-size: 0.95rem;
+            color: #5b4e3a;
+        }
+
+        .note-remark a {
+            color: #28649e;
+            text-decoration: none;
+            border-bottom: 1px dotted #b6cbe0;
+        }
+
+        .note-remark a:hover {
+            border-bottom: 1px solid #f9d56e;
+        }
+
+        hr {
+            margin: 1.8rem 0;
+            border: none;
+            height: 1px;
+            background: linear-gradient(to right, transparent, #d6e1ed, transparent);
+        }
+
+        @media (max-width: 700px) {
+            .hero h1 { font-size: 1.9rem; }
+            .hero { padding: 2.8rem 1rem 3rem; }
+            .section-card { padding: 1.5rem 1.2rem; }
+            .grid-2 { grid-template-columns: 1fr; gap: 1rem; }
+            .container { padding: 1.8rem 1rem 2.5rem; }
+        }
+
+        @media (max-width: 450px) {
+            .hero .sub { font-size: 0.95rem; }
+            .section-card h2 { font-size: 1.25rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="hero">
+        <h1>世界杯 · 简明观赛指南</h1>
+        <div class="sub">从赛程提醒到深度看点，帮你更从容地享受每一场对决</div>
+    </header>
+
+    <main class="container">
+        
+        <!-- 摘要 / 产品定位 -->
+        <div class="section-card">
+            <h2>关于这个页面</h2>
+            <p>这里不是官方售票处，也不是数据统计库——而是一份温和的辅助说明，围绕 <a href="https://on-cn-shijiebei.com" class="link-em">世界杯</a> 的赛程节奏、观赛小技巧以及信息查找思路展开。如果你正打算完整跟上这届赛事，下面的内容也许能帮你理清头绪，少走一些弯路。</p>
+            <div class="highlight-box">
+                <strong>📌 一句话定位：</strong> 围绕世界杯的实用轻指南，侧重信息获取思路与观赛体验优化，不代替任何官方渠道。
+            </div>
+        </div>
+
+        <!-- 亮点 / 特点：两个核心方向 -->
+        <div class="section-card">
+            <h2>两个值得留意的特点</h2>
+            <div class="grid-2">
+                <div class="feature-item">
+                    <h3>⏳ 赛程节奏提示</h3>
+                    <p>小组赛密集期每天最多四场，而淘汰赛间隔更长。我们整理了不同阶段的观赛节奏建议，帮助你合理分配精力，不错过关键战役。</p>
+                </div>
+                <div class="feature-item">
+                    <h3>🧭 信息筛选思路</h3>
+                    <p>比赛之外，裁判动态、场地天气、球队大名单变更都可能影响走向。这里提供一些可靠的信息查找路径，而非直接搬运数据。</p>
+                </div>
+            </div>
+            <p style="margin-top: 1.2rem; font-size: 0.95rem; color: #546e7a;">这些内容并非独家内幕，而是基于公开信息与观赛经验整合而成的辅助视角。</p>
+        </div>
+
+        <!-- 使用建议 / 场景 -->
+        <div class="section-card">
+            <h2>使用建议 · 适合这些场景</h2>
+            <p>这份指南更适合以下三类情况：</p>
+            <ul style="margin-left: 1.4rem; margin-bottom: 0.8rem; color: #2c3e50;">
+                <li style="margin-bottom: 0.4rem;">🏟️ <strong>刚入坑的新观众</strong>——想快速了解本届赛制、热门对阵阶段，但不想被铺天盖地的信息淹没。</li>
+                <li style="margin-bottom: 0.4rem;">📱 <strong>移动端观赛族</strong>——希望在碎片时间里掌握比赛日要点，并知道去哪里核对时间与结果。</li>
+                <li style="margin-bottom: 0.4rem;">🧩 <strong>信息整理爱好者</strong>——喜欢自己搭配观赛计划，需要一份简洁的框架作为起点。</li>
+            </ul>
+            <p>你可以把它当作一个轻量级的起点，再结合自己的习惯补充细节。真正的赛程、积分与转播渠道，仍以官方发布为准。</p>
+            <a href="https://on-cn-shijiebei.com" class="btn-soft">世界杯</a>
+        </div>
+
+        <!-- FAQ 摘要 -->
+        <div class="section-card">
+            <h2>常见疑问 · 快速参考</h2>
+            <div class="faq-item">
+                <div class="faq-question">❓ 哪里获取最准确的比赛时间？</div>
+                <div class="faq-answer">建议优先查看国际足联官网或持权转播商列表。作为补充，你也可以在 <a href="https://on-cn-shijiebei.com" class="link-em">世界杯</a> 信息页找到整理过的赛程概览，但具体分钟数请以官方为准。</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">❓ 页面会实时更新比分吗？</div>
+                <div class="faq-answer">本站不提供实时比分推送。我们更倾向于在每轮结束后提供简要回顾与下一轮看点提示，保持克制的更新节奏。</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">❓ 是否有球队或球员深度分析？</div>
+                <div class="faq-answer">深度战术分析并非本页重点。我们会推荐一些外部优质内容源（如数据分析网站、独立球评），但不会直接搬运。你可以从页面中的链接出发自行探索。</div>
+            </div>
+            <p style="font-size: 0.9rem; margin-top: 0.6rem; color: #6b7f93;">更多疑问可参考站内其他说明，或直接通过页面线索进一步查找。</p>
+        </div>
+
+        <!-- 可信但克制的访问说明 -->
+        <div class="note-remark">
+            <p><strong>📎 访问说明</strong> · 本站内容由爱好者整理，仅供参考与交流。所有赛事信息均以 FIFA 官方及授权媒体发布为准。我们不对第三方链接的准确性与时效性承担担保责任。建议你同时开启多个信源交叉确认。页面中提到的任何链接（包括 <a href="https://on-cn-shijiebei.com">世界杯</a> 相关页面）都不代表商业背书，仅为信息延伸。请根据自身判断决定是否使用。</p>
+            <p style="margin-top: 0.8rem; font-size: 0.9rem;">—— 保持理性，享受比赛本身。</p>
+        </div>
+
+        <hr>
+
+        <div style="text-align: center; font-size: 0.85rem; color: #7f8c9b; padding: 0.5rem 0 1rem;">
+            <!-- 此处仅作占位，无任何诱导文字 -->
+            <span>页面内容定期微调 · 最近更新于 2025</span>
+        </div>
+
+    </main>
+
+</body>
+</html>
